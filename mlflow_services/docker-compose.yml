@@ -1,0 +1,26 @@
+version: '3.3'
+
+services:
+  model_db:
+    image: postgres
+    container_name: model_db
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+    ports:
+      - 5432:5432
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+
+  mlflow_server:
+    restart: always
+    image: $MLFLOW_BASE_CONTAINER_TAG
+    container_name: mlflow_server
+    volumes:
+      - /tmp/mlruns:/tmp/mlruns
+    ports:
+      - 5000:5000
+    command: mlflow server --backend-store-uri postgresql://postgres:example@model_db/postgres --default-artifact-root file:/tmp/mlruns --host 0.0.0.0
+    
+volumes:
+  dbdata:

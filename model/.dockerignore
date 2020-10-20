@@ -1,0 +1,15 @@
+
+## Python
+
+# tests as they're not needed
+tests/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+# Jupyter notebook files
+ .ipynb_checkpoints
+*.ipynb
