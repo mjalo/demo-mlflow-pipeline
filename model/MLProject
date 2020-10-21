@@ -1,4 +1,4 @@
-name: patient-noshow-model
+name: elasticnet-wine-model
 
 entry_points:
   main:

@@ -72,9 +72,6 @@ Build model container:
 
 `make build_model_container`
 
-Build model container:  
-
-`make build_model_container`
 
 #### Start mlflow services
 
